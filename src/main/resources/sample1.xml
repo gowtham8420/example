@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  <!-- BEAN 1 -->
+<bean id="ed" class="constructor_injection_sample1.Employe">  
+ <constructor-arg   value="20" type="int"/> 
+ <constructor-arg value="Sonoo"></constructor-arg> 
+</bean>  
+
+<!-- BEAN 2 -->
+<bean id="obj" class="Setter_injection_sample1.Employee">  
+<property name="id">  
+<value>20</value>  
+</property>  
+<property name="name">  
+<value>Arun</value>  
+</property>  
+<property name="city">  
+<value>ghaziabad</value>  
+</property>  
+</bean>  
+
+
+<!-- BEAN 3 -->
+<bean id="b" class="Aurowire_sample1.B"></bean>  
+<bean id="a" class="Aurowire_sample1.A" autowire="byName"></bean>  
+
+<!-- BEAN 4 -->
+<bean id="opBean" class="AOP_sample1.Operation">   </bean>  
+    <bean id="trackMyBean" class="AOP_sample1.TrackOperation"></bean>  
+      
+    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>  
+
+</beans> 
